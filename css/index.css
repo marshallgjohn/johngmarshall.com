@@ -1,0 +1,206 @@
+/* Start of Console*/
+#body-console {
+    position: relative;
+    background: #3a3a3a;
+    width: 40vw;
+    height: 35vh;
+    margin: 5% auto 5% auto;
+    color: #ff5252;
+    border-radius: 5px;
+}
+#body-console-header {
+    background: #bcbcbc;
+    color: black;
+    height: 25px;
+    width: 100% - 5px;
+    padding: 5px 0 0 5px;
+    font-size: 10pt;
+    font-weight: 700;
+    border-radius: 5px 5px 0 0;
+}
+
+#body-console-content {
+    padding: 5px;
+}
+
+#body-console p {
+    vertical-align: bottom;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    padding-bottom: 5px;
+    left: 5px;
+}
+
+
+#blinking-cursor {
+    -webkit-animation: blink 1s infinite;
+    -moz-animation: blink 1s infinite;
+    -o-animation: blink 1s infinite;
+     animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+}
+/*End of console*/
+
+/* Start of projects section */
+#body-projects {
+    width: 100%;
+    height: 70%;
+    position: relative;
+}
+
+#body-projects-start-comment {
+    color: green;
+    font-weight: 1000;
+    font-size: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+#body-projects-end-comment {
+    color: green;
+    font-weight: 1000;
+    font-size: 100px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+#body-projects-content {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#body-projects-content-box-parent {
+    display: grid;
+    grid-template-columns: repeat(4, 12px);
+    grid-template-rows: repeat(4, 12px);
+    grid-gap: 17.5%;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.body-projects-content-box {
+    width: 275px;
+    height: 450px;
+    background: #f9f9f9;
+    border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.15);
+    border: 1px solid rgba(211, 211, 211, 1);
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.15);
+}
+
+.body-projects-content-box-content {
+    padding: 10px 5px 10px 5px;
+    font-size: 10pt;
+}
+
+.body-projects-content-box-content img{
+    width: 250px;
+    height: 250px;
+    padding-top: 20px;
+    border-radius: 30px 30px 30px 30px;
+
+}
+/* End of projects section */
+
+
+
+/* Start of Contact Me Section! */
+#body-contact {
+    text-align: center;
+    height: 500px;
+}
+
+#body-contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+
+}
+/* End of contact me section */
+
+
+/* Start of nav bar */
+
+#nav-main {
+
+    /*Nav Styling*/
+    list-style: none;
+    text-decoration: none;
+
+
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    
+
+    /* Border / Drop shadow*/
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: px 0px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(211, 211, 211, 1); 
+
+
+}
+
+#nav-logo {
+    margin-right: auto;
+    padding-left: 50px;
+    color: transparent;
+    background: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+    font-size: 35px;
+    font-weight: 900;
+}
+
+#nav-content {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+}
+
+#nav-content a {
+
+    color: rgba(0,0,0,.54);
+    text-decoration: none;
+    font-weight: 900;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5), 2px 2px 2px rgba(28,110,164,0);
+
+}
+
+.nav-selected-link {
+    color:  #ff5252 !important;
+}
+
+
+/* end of nav bar*/
+
+#footer-content {
+    font-size: 10px;
+    text-align: center;
+    color: gray;
+}
+
+html,body {
+    height:100%;
+    padding:0;
+    margin:0;
+    font-family: 'Open Sans',serif;
+}
