@@ -10,7 +10,7 @@ var infoWindowOpen;
 
 $(document).ready(function (){
 $.get("includes/pullMarker.inc.php", {}, function(result) {
-     alert(result);
+     //alert(result);
     let arr = result.split("~");
   for(var i = 0; i < arr.length ; i++)
   {
@@ -369,7 +369,7 @@ function addDetailsToList(desc,coupon,date,id) {
   button.addEventListener('click', function() {
 
     $.post('includes/deleteInfo.inc.php',{mID: id, dateT: date}, function(result) {
-      alert(result);
+      //alert(result);
     });
 
     ul.removeChild(li);
