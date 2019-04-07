@@ -82,8 +82,7 @@ include 'includes/dbh.inc.php';
 
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2kn0u1MznxXPe-e2yi0s-YvK2S-wuyFo&callback=initMap&libraries=places"
-async defer> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2kn0u1MznxXPe-e2yi0s-YvK2S-wuyFo&callback=initMap&libraries=places" async defer> </script>
 <script src="mains.js"></script>
   </body>
 </html>

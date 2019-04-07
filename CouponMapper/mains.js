@@ -70,7 +70,9 @@ function initMap() {
             couponT: couponText,
             descT: description,
             dateT: date
-          });
+          },function(result){
+	  	  alert(result);
+	  });
         }
 
 

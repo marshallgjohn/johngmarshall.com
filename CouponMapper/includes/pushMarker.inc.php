@@ -12,10 +12,10 @@
 
 
 
-$sql = "INSERT INTO MARKER (M_name,M_lat,M_lng, M_addy)values ('$name','$lat','$lng','$address');";
-$sql .="INSERT INTO EPISODE (M_ID,E_DATE,E_COUPON,E_DESC)VALUES (LAST_INSERT_ID(),'$date','$coupon','$desc');";
+$sql = "INSERT INTO marker (M_name,M_lat,M_lng, M_addy)values ('$name','$lat','$lng','$address');";
+$sql .="INSERT INTO episode (M_ID,E_DATE,E_COUPON,E_DESC)VALUES (LAST_INSERT_ID(),'$date','$coupon','$desc');";
 
-    mysqli_multi_query($conn,$sql);
+mysqli_multi_query($conn,$sql);
 
 
 
