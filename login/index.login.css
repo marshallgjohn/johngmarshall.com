@@ -1,0 +1,72 @@
+#login-box {
+    margin: 15% 42% auto 42%;
+    text-align: center;
+    min-height: 250px;
+    min-width: 250px;
+    padding: 15px;
+    color: black;
+
+    background: #FFFFFF;
+
+    -webkit-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.18);
+    -moz-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.18);
+    box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.18);
+
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    z-index: 10000000;
+}
+
+#login-box input {
+    width: 75%;
+    margin: 15px;
+    padding: 8px;
+    clear: both;
+    border: 1px solid rgba(158,158,158,0.4);
+
+  }
+
+#error-text {
+    color: red;
+    background: rgba(217, 30, 24, .15);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px red solid;
+}
+
+#submit-button {
+    background: #00CF7F;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+  }
+
+
+  form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+label, input {
+    /* in order to define widths */
+    display: inline-block;
+}S
+
+
+
+
+html {
+    
+    padding:0;
+    margin:0;
+    font-family: 'Open Sans',serif;
+    background: rgb(168, 168, 168,0.6);
+
+    
+}
+
+

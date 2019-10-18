@@ -1,5 +1,9 @@
 <?php
-include 'includes/dbh.inc.php';
+session_start();
+if(!isset($_SESSION['userUid'])) {
+    header('Location: ../login/');
+    die("Please login");
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +13,6 @@ include 'includes/dbh.inc.php';
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-
   </head>
   <body>
         <div id="modal" class="modal">
@@ -83,6 +84,8 @@ include 'includes/dbh.inc.php';
 
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2kn0u1MznxXPe-e2yi0s-YvK2S-wuyFo&callback=initMap&libraries=places" async defer> </script>
-<script src="mains.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="mains.js"></script>
+
   </body>
 </html>

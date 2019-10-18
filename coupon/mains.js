@@ -6,11 +6,11 @@ var searchBox;
 var legend;
 var infoWindowOpen;
 
-
-
+//Init for when document loaded
 $(document).ready(function (){
+
+//Pulls all markers in database and displays them in legend using custom split to get each value
 $.get("includes/pullMarker.inc.php", {}, function(result) {
-     //alert(result);
     let arr = result.split("~");
   for(var i = 0; i < arr.length ; i++)
   {
@@ -20,18 +20,11 @@ $.get("includes/pullMarker.inc.php", {}, function(result) {
     }
   }
   });
+
+
+  initModal();
+  initMap();
 });
-
-
-
-
-
-
-
-initMap();
-initModal();
-
-
 
 
 function initMap() {
@@ -55,6 +48,11 @@ function initMap() {
         let name = $("#nameText").val();
         let address = $("#addressText").val();
 
+        
+        if (date === "" || description === "" || couponText ==="")
+        {
+          alert("You have not filled out all required fields" + date+description+couponText);
+        } else {
         //Checks to see if marker already created and if is just adds details to infowindow on screen
         if(!customMarkers.some(x => x[0].get('id') === (id))){
           //Adds marker on map
@@ -71,7 +69,7 @@ function initMap() {
             descT: description,
             dateT: date
           },function(result){
-	  	  alert(result);
+	  	  
 	  });
         }
 
@@ -101,7 +99,7 @@ function initMap() {
           }
           
         }
-
+      }
     });
 
     //Clears marker from screen
@@ -123,9 +121,9 @@ function initMap() {
 //Init for modal window aka help menu
 function initModal()
 {
-
   //When click button opens window
   $("#buttonModal").click(function () {
+
     $(".modal").css("display","block");
   });
 
@@ -277,6 +275,7 @@ function addMarker (location,name,address) {
     marker.addListener('dblclick', function() {
       map.setCenter(location);
       map.setZoom(15);
+      
   });
   marker.addListener('click', function()
   {
@@ -290,12 +289,13 @@ function addMarker (location,name,address) {
     }
 
     $.get("includes/pullInfo.inc.php", {lat: marker.position.lat, lng: marker.position.lng}, function(result) {
+
       let arr = result.split("~");
       for(let element = 0; element < arr.length -1; element++)
       {
         
        let arr2 = arr[element].split("|");
-       addDetailsToList(arr2[4],arr2[2],arr2[3],marker.get('id'));
+       addDetailsToList(arr2[4],arr2[2],arr2[3],marker.get('id'),marker,infowindow);
     
       };
     });
@@ -342,7 +342,7 @@ function removeItemFromList (id)
 }
 
 //add events as a <details> to infowindows
-function addDetailsToList(desc,coupon,date,id) {
+function addDetailsToList(desc,coupon,date,id,marker,infowindow) {
   //Creates unordered list to hold all <details> events
   let ul = document.getElementById(id);
   let li = document.createElement("li");
@@ -370,11 +370,22 @@ function addDetailsToList(desc,coupon,date,id) {
   button.innerText = "Delete Event";
   button.addEventListener('click', function() {
 
-    $.post('includes/deleteInfo.inc.php',{mID: id, dateT: date}, function(result) {
+    $.post('includes/deleteInfo.inc.php',{mID: id, dateT: date, descT: desc, couponT: coupon}, function(result) {
       //alert(result);
     });
 
     ul.removeChild(li);
+
+    if (ul.childElementCount == 0) {
+        infowindow.close();
+        $.get('includes/deleteMarker.inc.php',{lat: marker.position.lat});
+        removeItemFromList(id);
+        marker.setMap(null);
+          customMarkers = customMarkers.filter(function(x) {
+            x[0] == marker.get('id');
+          });
+    }
+    
   });
   //Add details to ul and li to ul
   li.appendChild(details);
