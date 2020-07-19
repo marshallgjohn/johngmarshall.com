@@ -83,7 +83,7 @@ if(!isset($_SESSION['userUid'])) {
 
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2kn0u1MznxXPe-e2yi0s-YvK2S-wuyFo&callback=initMap&libraries=places" async defer> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={API KEY}&callback=initMap&libraries=places" async defer> </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="mains.js"></script>
 
